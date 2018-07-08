@@ -6,9 +6,15 @@ eureka:
       defaultZone: http://localhost:8080/eureka/
   instance:
     prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
 spring:
   application:
     name: demo-register
+#Actuator配置
+
+management:
+  security:
+    enabled: false
 
 
 
